@@ -21,7 +21,7 @@ while True:
   elif escolha == 3: 
     consultar_estoque()
   elif escolha == 4:
-    mostrar_historico
+    mostrar_historico()
     
 
   
