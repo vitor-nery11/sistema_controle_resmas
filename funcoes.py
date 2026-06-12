@@ -47,3 +47,9 @@ def registrar_saida():
 def consultar_estoque():
         print(f'Estoque de resma: {dados.estoque_resmas}')
         print(f'Estoque de caixas:{dados.estoque_caixas}')
+
+
+
+def mostrar_historico():
+     for movimentacoes in dados.historico:
+          print(movimentacoes)
