@@ -1,5 +1,6 @@
 import dados
 
+
 def registrar_entrada():
 
     quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
@@ -58,6 +59,7 @@ def registrar_saida():
 def consultar_estoque():
         print(f'Estoque de resma: {dados.estoque_resmas}')
         print(f'Estoque de caixas:{dados.estoque_caixas}')
+        
 
 
 
@@ -82,5 +84,35 @@ def mostrar_historico():
                print(f'Responsavel: {movimentacoes['responsavel']}')
                print('---------------------')
                print()
+
+
+def gerar_relatorio():
+     print('======= RELATORIO =======')
+     print()
+     print(f'Estoque atual de caixas {dados.estoque_caixas}')
+     print(f'Estoque de atual de resmas {dados.estoque_resmas}')
+
+     total_entrada = 0
+     total_saida = 0
+     total_movimentações = len(dados.historico)
+
+     # logica para definir quantidade de entradas e saidas na função
+     for movimentacao in dados.historico:
+        if movimentacao['tipo'] == 'entrada':
+             total_entrada += 1
+        elif movimentacao['tipo'] == 'saida':
+             total_saida += 1 
+             
+        
+         
+     print(f'Total de entradas: {total_entrada}')
+
+     print(f'Total de saidas:{total_saida}')
+
+     print(f'Total de movimentações:{total_movimentações}')
+              
+             
+             
+        
                
                
