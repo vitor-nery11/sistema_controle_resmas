@@ -22,11 +22,11 @@ def registrar_entrada():
 
 def registrar_saida():
     tipo = 'saida'
-    data_saida = input('Digite a data da saida de resma')
+    data_saida = input('Digite a data da saida de resma:')
 
     quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
 
-    setor = input('Diga qual setor esta recebendo as folhas')
+    setor = input('Diga qual setor esta recebendo as folhas:')
 
     responsavel_setor = input('Diga quem é o responsavel do setor:')
 
@@ -45,4 +45,5 @@ def registrar_saida():
   
 
 def consultar_estoque():
-    print()
+        print(f'Estoque de resma: {dados.estoque_resmas}')
+        print(f'Estoque de caixas:{dados.estoque_caixas}')
