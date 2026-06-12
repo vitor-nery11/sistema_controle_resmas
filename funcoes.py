@@ -46,7 +46,7 @@ def registrar_saida():
     dados.historico.append({
         'tipo': tipo,
         'data': data_saida,
-        'quantidade de resmas': quantidade_saida,
+        'quantidade': quantidade_saida,
         'setor': setor,
         'responsavel': responsavel_setor
     })
@@ -62,5 +62,25 @@ def consultar_estoque():
 
 
 def mostrar_historico():
+     print('=== HISTORICO ===')
      for movimentacoes in dados.historico:
-          print(movimentacoes)
+          
+          if movimentacoes['tipo'] == 'entrada':
+               print('ENTRADA:')
+               print(f'Data: {movimentacoes['data']}')
+               print(f'Quantidade: {movimentacoes['quantidade']}')
+               print('--------------------')
+               print()
+               
+               
+          
+          if movimentacoes['tipo'] == 'saida':
+               print('SAIDA')
+               print(f'Data: {movimentacoes['data']}')
+               print(f'Quantidade: {movimentacoes['quantidade']}')
+               print(f'Setor: {movimentacoes['setor']}')
+               print(f'Responsavel: {movimentacoes['responsavel']}')
+               print('---------------------')
+               print()
+               
+               
