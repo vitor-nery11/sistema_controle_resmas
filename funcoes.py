@@ -5,7 +5,7 @@ def registrar_entrada():
 
     quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
 
-    data_entrada = input('Digite a data da entrada')
+    data_entrada = input('Digite a data da entrada:')
 
     dados.estoque_caixas += quantidade_entrada
     dados.estoque_resmas += quantidade_entrada * 10 
