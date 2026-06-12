@@ -7,6 +7,7 @@ while True:
   print('2. registrar saida de resmas')
   print('3. consultar estoque de resmas')
   print('4. consultar historico')
+  print('5. sair')
 
   escolha = int(input('Digite a sua escolha:'))
 
@@ -22,5 +23,8 @@ while True:
   elif escolha == 4:
     mostrar_historico()
     
+  elif escolha == 5:
+      print('Encerrando sistema!!')
+      break
 
   
