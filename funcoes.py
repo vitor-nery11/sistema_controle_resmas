@@ -1,9 +1,14 @@
 import dados
 
 def registrar_entrada():
-    tipo = 'entrada'
 
     quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
+
+    if quantidade_entrada < 0:
+         print('Valor muito abaixo do esperado, tente novamente')
+         return 
+    
+    tipo = 'entrada'
 
     data_entrada = input('Digite a data da entrada:')
 
