@@ -13,13 +13,12 @@ while True:
   if escolha == 1:
     registrar_entrada()
 
-
   elif escolha == 2:
     registrar_saida()
 
-    registrar_saida()
   elif escolha == 3: 
     consultar_estoque()
+
   elif escolha == 4:
     mostrar_historico()
     

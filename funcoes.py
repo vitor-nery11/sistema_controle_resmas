@@ -21,10 +21,16 @@ def registrar_entrada():
     
 
 def registrar_saida():
-    tipo = 'saida'
-    data_saida = input('Digite a data da saida de resma:')
 
     quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
+
+    if quantidade_saida > dados.estoque_resmas:
+         print('Saldo insuficiente para retirada!')
+         return 
+         
+    tipo = 'saida'
+
+    data_saida = input('Digite a data da saida de resma:')
 
     setor = input('Diga qual setor esta recebendo as folhas:')
 
