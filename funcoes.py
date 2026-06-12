@@ -7,7 +7,8 @@ def registrar_entrada():
 
     data_entrada = input('Digite a data da entrada')
 
-    dados.estoque += quantidade_entrada
+    dados.estoque_caixas += quantidade_entrada
+    dados.estoque_resmas += quantidade_entrada * 10 
 
     dados.historico.append({
         'tipo': tipo,
@@ -15,11 +16,13 @@ def registrar_entrada():
         'data': data_entrada
     })
 
-    print(dados.estoque)
+    print(f'{quantidade_entrada} caixas adicionadas com sucesso!!')
+    print(dados.estoque_resmas)
 
     
 
 def registrar_saida():
+    tipo = 'saida'
     data_saida = input('Digite a data da saida de resma')
 
     quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
@@ -27,7 +30,17 @@ def registrar_saida():
     setor = input('Diga qual setor esta recebendo as folhas')
 
     responsavel_setor = input('Diga quem é o responsavel do setor:')
+
+    dados.historico.append({
+        'tipo': tipo,
+        'data': data_saida,
+        'quantidade': quantidade_saida,
+        'setor': setor,
+        'responsavel': responsavel_setor
+    })
+
+    print(f'Você retirou {quantidade_saida} resmas!')
   
 
 def consultar_estoque():
-    print(dados.estoque)
+    print()
