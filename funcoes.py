@@ -41,6 +41,7 @@ def registrar_saida():
 
     if quantidade_saida > dados.estoque_resmas:
          print('Saldo insuficiente para retirada!')
+         return 
 
     
     if quantidade_saida > 10:
@@ -143,11 +144,15 @@ def gerar_relatorio():
 def atualizar_estoque():
      if dados.saida_por_caixa == 10:
           dados.estoque_caixas -= 1
+          dados.saida_por_caixa -= 10
 
 # LOGICA PARA ALERTA DE ESTOQUE SOBRE QUANTIDADE DE CAIXAS
 def alerta_estoque():
      if dados.estoque_resmas <= 60:
           print('Por favor faça o novo pedido de caixas e adicione no estoque!!')
+
+
+
      
 
 
