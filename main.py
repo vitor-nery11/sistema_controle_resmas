@@ -5,6 +5,7 @@ print('Seja bem vindo ao sistema de controle de resmas')
 
 # Mecanismo de persistencia de dados: Utilizando json para carregar os dados salvos
 carregar_dados()
+print()
 
 while True:
   print('1. registrar entrada de resmas')

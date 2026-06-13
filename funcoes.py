@@ -19,6 +19,7 @@ def registrar_entrada():
     dados.estoque_caixas += quantidade_entrada
     dados.estoque_resmas += quantidade_entrada * 10 
 
+
     dados.historico.append({
         'tipo': tipo,
         'quantidade': quantidade_entrada,
@@ -51,6 +52,7 @@ def registrar_saida():
     responsavel_setor = input('Diga quem é o responsavel do setor:')
 
     dados.estoque_resmas -= quantidade_saida
+    dados.saida_por_caixa += quantidade_saida
 
     dados.historico.append({
         'tipo': tipo,
@@ -59,6 +61,8 @@ def registrar_saida():
         'setor': setor,
         'responsavel': responsavel_setor
     })
+
+    atualizar_estoque()
 
     salvar_dados()
     
@@ -125,6 +129,16 @@ def gerar_relatorio():
 
      print(f'Total de movimentações:{total_movimentações}')
      print()
+
+
+def atualizar_estoque():
+     if dados.saida_por_caixa == 10:
+          dados.estoque_caixas -= 1
+     
+
+
+
+
               
              
              
