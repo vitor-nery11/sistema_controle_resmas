@@ -41,6 +41,10 @@ def registrar_saida():
 
     if quantidade_saida > dados.estoque_resmas:
          print('Saldo insuficiente para retirada!')
+
+    
+    if quantidade_saida > 10:
+         print('Insira um valor menor, você pode retirar no maximo 10 resmas por saida')
          return 
          
     tipo = 'saida'
@@ -62,9 +66,14 @@ def registrar_saida():
         'responsavel': responsavel_setor
     })
 
+     # logica de validação de estoque 
     atualizar_estoque()
 
+     # Persistencia de dados 
     salvar_dados()
+
+     # alerta para validação de estoque 
+    alerta_estoque()
     
     os.system('cls')
     print(f'Você retirou {quantidade_saida} resmas!')
@@ -130,10 +139,15 @@ def gerar_relatorio():
      print(f'Total de movimentações:{total_movimentações}')
      print()
 
-
+# LOGICA PARA VALIDAÇÃO DE ESTOQUE DE CAIXAS BASEADO NO GASTO DE RESMAS
 def atualizar_estoque():
      if dados.saida_por_caixa == 10:
           dados.estoque_caixas -= 1
+
+# LOGICA PARA ALERTA DE ESTOQUE SOBRE QUANTIDADE DE CAIXAS
+def alerta_estoque():
+     if dados.estoque_caixas <= 6:
+          print('Por favor faça o novo pedido de caixas e adicione no estoque!!')
      
 
 

@@ -1,23 +1,11 @@
 {
-    "estoque_caixas": 1,
-    "estoque_resmas": 10,
+    "estoque_caixas": 7,
+    "estoque_resmas": 70,
     "historico": [
         {
             "tipo": "entrada",
-            "quantidade": 1,
+            "quantidade": 7,
             "data": "13/06/2026"
-        },
-        {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "13/06/2026"
-        },
-        {
-            "tipo": "saida",
-            "data": "10",
-            "quantidade": 10,
-            "setor": "10",
-            "responsavel": "karita"
         }
     ]
 }
