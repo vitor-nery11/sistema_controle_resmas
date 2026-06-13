@@ -72,12 +72,12 @@ def registrar_saida():
      # Persistencia de dados 
     salvar_dados()
 
-     # alerta para validação de estoque 
-    alerta_estoque()
     
     os.system('cls')
+  
     print(f'Você retirou {quantidade_saida} resmas!')
     print(f'Estoque de resmas atual: {dados.estoque_resmas}')
+    alerta_estoque()
     print()
   
 
@@ -146,7 +146,7 @@ def atualizar_estoque():
 
 # LOGICA PARA ALERTA DE ESTOQUE SOBRE QUANTIDADE DE CAIXAS
 def alerta_estoque():
-     if dados.estoque_caixas <= 6:
+     if dados.estoque_resmas <= 60:
           print('Por favor faça o novo pedido de caixas e adicione no estoque!!')
      
 
