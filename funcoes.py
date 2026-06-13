@@ -159,10 +159,37 @@ def filtrar_data():
      print('2. Saida')
      print()
      escolha_filtro = int(input('Escolha uma opção:'))
+     data_filtrada = []
 
-     data_selecionada = input('Digite a data que deseja filtrar:')
-     data_filtrada = ''
-     print('')     
+     if escolha_filtro == 1:
+           data_selecionada = input('Digite a data que deseja filtrar:')
+           for movimentacao in dados.historico:
+               if movimentacao['tipo'] == 'entrada' and movimentacao['data'] == data_selecionada:
+                    data_filtrada.append(movimentacao)
+               
+     if escolha_filtro == 2:
+          data_selecionada = input('Digite a data que deseja filtrar:')
+          for movimentacao in dados.historico:
+               if movimentacao['tipo'] == 'saida' and movimentacao['data'] == data_selecionada:
+                    data_filtrada.append(movimentacao)
+                
+
+     os.system('cls')
+     print('======= HISTÓRICO FILTRADO =======')
+
+     for movimentacao in data_filtrada:
+
+          print(f"Tipo: {movimentacao['tipo']}")
+          print(f"Data: {movimentacao['data']}")
+          print(f"Quantidade: {movimentacao['quantidade']}")
+
+          if movimentacao['tipo'] == 'saida':
+                print(f"Setor: {movimentacao['setor']}")
+                print(f"Responsável: {movimentacao['responsavel']}")
+
+          print('-' * 30)
+          print()
+     
 
 
 

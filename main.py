@@ -1,4 +1,4 @@
-from funcoes import registrar_entrada, registrar_saida, consultar_estoque, mostrar_historico,gerar_relatorio
+from funcoes import registrar_entrada, registrar_saida, consultar_estoque, mostrar_historico,gerar_relatorio, filtrar_data
 from persistencia import carregar_dados
 
 print('Seja bem vindo ao sistema de controle de resmas')
@@ -13,7 +13,8 @@ while True:
   print('3. consultar estoque de resmas')
   print('4. consultar historico')
   print('5. Gerar relatorio')
-  print('6. sair')
+  print('6. filtrar por data')
+  print('7. sair')
 
   escolha = int(input('Digite a sua escolha:'))
 
@@ -31,8 +32,11 @@ while True:
 
   elif escolha == 5:
       gerar_relatorio()
-    
+  
   elif escolha == 6:
+     filtrar_data()
+    
+  elif escolha == 7:
       print('Encerrando sistema!!')
       break
 
