@@ -1,8 +1,10 @@
 from persistencia import salvar_dados,carregar_dados
 import dados
+import os 
 
 
 def registrar_entrada():
+    os.system('cls')
 
     quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
 
@@ -24,13 +26,16 @@ def registrar_entrada():
     })
 
     salvar_dados()
-
+    os.system('cls')
     print(f'{quantidade_entrada} caixas adicionadas com sucesso!!')
+    print()
+    
 
     
 
 def registrar_saida():
 
+    os.system('cls')
     quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
 
     if quantidade_saida > dados.estoque_resmas:
@@ -56,18 +61,23 @@ def registrar_saida():
     })
 
     salvar_dados()
-
+    
+    os.system('cls')
     print(f'Você retirou {quantidade_saida} resmas!')
-    print(dados.estoque_resmas)
+    print(f'Estoque de resmas atual: {dados.estoque_resmas}')
+    print()
   
 
 def consultar_estoque():
+        os.system('cls')
         print(f'Estoque de resma: {dados.estoque_resmas}')
         print(f'Estoque de caixas:{dados.estoque_caixas}')
+        print()
         
 
 
 def mostrar_historico():
+     os.system('cls')
      print('=== HISTORICO ===')
      for movimentacoes in dados.historico:
           
@@ -91,6 +101,7 @@ def mostrar_historico():
 
 
 def gerar_relatorio():
+     os.system('cls')
      print('======= RELATORIO =======')
      print()
      print(f'Estoque atual de caixas {dados.estoque_caixas}')
@@ -113,6 +124,7 @@ def gerar_relatorio():
      print(f'Total de saidas:{total_saida}')
 
      print(f'Total de movimentações:{total_movimentações}')
+     print()
               
              
              
