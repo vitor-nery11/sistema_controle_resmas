@@ -1,3 +1,4 @@
+from persistencia import salvar_dados,carregar_dados
 import dados
 
 
@@ -21,6 +22,8 @@ def registrar_entrada():
         'quantidade': quantidade_entrada,
         'data': data_entrada
     })
+
+    salvar_dados()
 
     print(f'{quantidade_entrada} caixas adicionadas com sucesso!!')
 
@@ -52,6 +55,8 @@ def registrar_saida():
         'responsavel': responsavel_setor
     })
 
+    salvar_dados()
+
     print(f'Você retirou {quantidade_saida} resmas!')
     print(dados.estoque_resmas)
   
@@ -60,7 +65,6 @@ def consultar_estoque():
         print(f'Estoque de resma: {dados.estoque_resmas}')
         print(f'Estoque de caixas:{dados.estoque_caixas}')
         
-
 
 
 def mostrar_historico():
@@ -104,7 +108,6 @@ def gerar_relatorio():
              total_saida += 1 
              
         
-         
      print(f'Total de entradas: {total_entrada}')
 
      print(f'Total de saidas:{total_saida}')

@@ -1,0 +1,28 @@
+{
+    "estoque_caixas": 4,
+    "estoque_resmas": 38,
+    "historico": [
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "10/06/2026"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 2,
+            "data": "10/06/2026"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "12/06/2026"
+        },
+        {
+            "tipo": "saida",
+            "data": "12/06/2026",
+            "quantidade": 2,
+            "setor": "Comercial ",
+            "responsavel": "Brenda "
+        }
+    ]
+}

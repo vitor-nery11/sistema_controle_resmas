@@ -1,6 +1,10 @@
 from funcoes import registrar_entrada, registrar_saida, consultar_estoque, mostrar_historico,gerar_relatorio
+from persistencia import carregar_dados
 
 print('Seja bem vindo ao sistema de controle de resmas')
+
+# Mecanismo de persistencia de dados: Utilizando json para carregar os dados salvos
+carregar_dados()
 
 while True:
   print('1. registrar entrada de resmas')
