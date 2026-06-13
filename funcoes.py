@@ -152,8 +152,18 @@ def alerta_estoque():
           print('Por favor faça o novo pedido de caixas e adicione no estoque!!')
 
 
+# LOGICA PARA FILTRAR MOVIMENTAÇÕES PELA DATA 
+def filtrar_data():
+     print('Escolha a opção que deseja filtrar:')
+     print('1. Entrada')
+     print('2. Saida')
+     print()
+     escolha_filtro = int(input('Escolha uma opção:'))
 
-     
+     data_selecionada = input('Digite a data que deseja filtrar:')
+     data_filtrada = ''
+     print('')     
+
 
 
 
