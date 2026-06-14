@@ -16,7 +16,24 @@ while True:
   print('6. filtrar por data')
   print('7. sair')
 
-  escolha = int(input('Digite a sua escolha:'))
+  opcoes_validas = 1,2,3,4,5,6,7
+
+  while True:
+    try: 
+      escolha = int(input('Digite a sua escolha:'))
+ 
+      if escolha not in opcoes_validas:
+         print('O valor digitado não esta em nosso menu, tente novamente')
+         continue
+    
+      break
+
+    except ValueError:
+       print('Digite apenas numeros:')
+     
+     
+     
+     
 
   if escolha == 1:
     registrar_entrada()
