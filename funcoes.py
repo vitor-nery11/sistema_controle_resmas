@@ -6,7 +6,18 @@ import os
 def registrar_entrada():
     os.system('cls')
 
-    quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
+    while True:
+       try:
+          quantidade_entrada = int(input('Digite a quantidade de caixas que deseja registrar:'))
+
+          if quantidade_entrada <= 0:
+               print('Digite uma entrada mais alta,tente novamente')
+               continue
+          break
+       
+       except ValueError:
+            print('Digite apenas numeros')
+
 
     if quantidade_entrada < 0:
          print('Valor muito abaixo do esperado, tente novamente')

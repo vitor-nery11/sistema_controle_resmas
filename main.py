@@ -29,7 +29,7 @@ while True:
       break
 
     except ValueError:
-       print('Digite apenas numeros:')
+       print('Digite apenas numeros')
      
      
      
