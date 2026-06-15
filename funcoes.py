@@ -1,4 +1,5 @@
 from persistencia import salvar_dados,carregar_dados
+from datetime import datetime
 import dados
 import os 
 
@@ -25,7 +26,9 @@ def registrar_entrada():
     
     tipo = 'entrada'
 
-    data_entrada = input('Digite a data da entrada:')
+    data = input('Digite a data da entrada:')
+
+    validar_data(data)
 
     dados.estoque_caixas += quantidade_entrada
     dados.estoque_resmas += quantidade_entrada * 10 
@@ -34,7 +37,7 @@ def registrar_entrada():
     dados.historico.append({
         'tipo': tipo,
         'quantidade': quantidade_entrada,
-        'data': data_entrada
+        'data': data
     })
 
     salvar_dados()
@@ -61,7 +64,7 @@ def registrar_saida():
          
     tipo = 'saida'
 
-    data_saida = input('Digite a data da saida de resma:')
+    data = input('Digite a data da saida de resma:')
 
     setor = input('Diga qual setor esta recebendo as folhas:')
 
@@ -72,7 +75,7 @@ def registrar_saida():
 
     dados.historico.append({
         'tipo': tipo,
-        'data': data_saida,
+        'data': data,
         'quantidade': quantidade_saida,
         'setor': setor,
         'responsavel': responsavel_setor
@@ -200,6 +203,30 @@ def filtrar_data():
 
           print('-' * 30)
           print()
+
+
+# FUNÇÃO PARA VALIDAR AS DATA RECEBIDAS PELOS USUARIOS
+def validar_data(data):
+     try:
+          # validação de tamanho
+          if len(data) != 10:
+             print('tente novamente, sua data parece ter um tamanho inadequado')
+             return False
+
+          # validação de data
+          data_valida = datetime.strptime(data, '%d/%m/%Y')
+          if data_valida == True:
+               return data_valida
+          
+     except ValueError: 
+          print('Houve um erro, tente novamente')
+
+
+
+     
+
+     
+
      
 
 

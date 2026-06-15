@@ -32,8 +32,6 @@ while True:
        print('Digite apenas numeros')
      
      
-     
-     
 
   if escolha == 1:
     registrar_entrada()

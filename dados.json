@@ -1,6 +1,6 @@
 {
-    "estoque_caixas": 2,
-    "estoque_resmas": 20,
+    "estoque_caixas": 7,
+    "estoque_resmas": 70,
     "historico": [
         {
             "tipo": "entrada",
@@ -11,6 +11,31 @@
             "tipo": "entrada",
             "quantidade": 1,
             "data": "14/06/~2026"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "12"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "12"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "1"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "1"
+        },
+        {
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "1"
         }
     ]
 }
