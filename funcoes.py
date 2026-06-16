@@ -3,7 +3,7 @@ from datetime import datetime
 import dados
 import os 
 
-
+# FUNÇÃO PARA ENTRADA DE DADOS NO SISTEMA COM VALIDAÇÃO DE ERRROS FEITA
 def registrar_entrada():
     os.system('cls')
 
@@ -45,9 +45,7 @@ def registrar_entrada():
     print(f'{quantidade_entrada} caixas adicionadas com sucesso!!')
     print()
     
-
-    
-
+# FUNÇÃO PARA SAIDA DE DADOS NO SISTEMA COM VALIDAÇÃO DE ERROS FEITA 
 def registrar_saida():
 
     os.system('cls')
@@ -129,15 +127,14 @@ def registrar_saida():
     alerta_estoque()
     print()
   
-
+# FUNÇÃO PARA CONSULTAR DADOS NO ESTOQUE
 def consultar_estoque():
         os.system('cls')
         print(f'Estoque de resma: {dados.estoque_resmas}')
         print(f'Estoque de caixas:{dados.estoque_caixas}')
         print()
         
-
-
+# FUNÇÃO PARA MOSTRAR HISTORICO DE DADOS
 def mostrar_historico():
      os.system('cls')
      print('=== HISTORICO ===')
@@ -161,7 +158,7 @@ def mostrar_historico():
                print('---------------------')
                print()
 
-
+# FUNÇÃO PARA GERAR RELATORIO DE DADOS DO SISTEMA 
 def gerar_relatorio():
      os.system('cls')
      print('======= RELATORIO =======')
@@ -198,7 +195,6 @@ def atualizar_estoque():
 def alerta_estoque():
      if dados.estoque_resmas <= 60:
           print('Por favor faça o novo pedido de caixas e adicione no estoque!!')
-
 
 # LOGICA PARA FILTRAR MOVIMENTAÇÕES PELA DATA 
 def filtrar_data():
@@ -237,7 +233,6 @@ def filtrar_data():
 
           print('-' * 30)
           print()
-
 
 # FUNÇÃO PARA VALIDAR AS DATA RECEBIDAS PELOS USUARIOS
 def validar_data(data):
