@@ -51,24 +51,58 @@ def registrar_entrada():
 def registrar_saida():
 
     os.system('cls')
-    quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
 
-    if quantidade_saida > dados.estoque_resmas:
-         print('Saldo insuficiente para retirada!')
-         return 
+    while True:
+          try:
+               quantidade_saida = int(input('Digite a quantidade que esta saindo:'))
+
+               if quantidade_saida <= 0 :
+                    print('Quantidade precisa ser maior do que zero') 
+                    continue
+           
+
+               if quantidade_saida > dados.estoque_resmas:
+                    print('Saldo insuficiente para retirada!')
+                    continue 
 
     
-    if quantidade_saida > 10:
-         print('Insira um valor menor, você pode retirar no maximo 10 resmas por saida')
-         return 
-         
+               if quantidade_saida > 10:
+                    print('Insira um valor menor, você pode retirar no maximo 10 resmas por saida')
+                    continue
+           
+               break
+
+          except ValueError:
+               print('Valor invalido, tente novamente')
+
+
+    while True: 
+          data = input('Digite a data da saida de resma:').strip()
+
+          validar_data(data)
+          break
+
+
+    while True:
+          setor = input('Diga qual setor esta recebendo as folhas:').strip()
+
+          if setor.strip() == '':
+               print('ops, parece que você não digitou nada, por favor tente novamente')
+               continue
+          break
+
+
+    while True: 
+          responsavel_setor = input('Diga quem é o responsavel do setor:').strip()
+
+          if responsavel_setor == '':
+                print('Campo obrigatorio, tente novamente')
+                continue 
+          
+          break
+
+
     tipo = 'saida'
-
-    data = input('Digite a data da saida de resma:')
-
-    setor = input('Diga qual setor esta recebendo as folhas:')
-
-    responsavel_setor = input('Diga quem é o responsavel do setor:')
 
     dados.estoque_resmas -= quantidade_saida
     dados.saida_por_caixa += quantidade_saida

@@ -1,6 +1,6 @@
 {
     "estoque_caixas": 7,
-    "estoque_resmas": 70,
+    "estoque_resmas": 68,
     "historico": [
         {
             "tipo": "entrada",
@@ -36,6 +36,13 @@
             "tipo": "entrada",
             "quantidade": 1,
             "data": "1"
+        },
+        {
+            "tipo": "saida",
+            "data": "15/06/2026",
+            "quantidade": 2,
+            "setor": "saa",
+            "responsavel": "karita "
         }
     ]
 }
