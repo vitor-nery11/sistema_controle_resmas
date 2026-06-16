@@ -244,8 +244,7 @@ def validar_data(data):
 
           # validação de data
           data_valida = datetime.strptime(data, '%d/%m/%Y')
-          if data_valida == True:
-               return data_valida
+          return True
           
      except ValueError: 
           print('Houve um erro, tente novamente')
