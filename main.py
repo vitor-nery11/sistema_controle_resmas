@@ -16,7 +16,7 @@ while True:
   print('6. filtrar por data')
   print('7. sair')
 
-  opcoes_validas = 1,2,3,4,5,6,7
+  opcoes_validas = (1,2,3,4,5,6,7)
 
   while True:
     try: 

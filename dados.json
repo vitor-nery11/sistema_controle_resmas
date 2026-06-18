@@ -1,48 +1,26 @@
 {
-    "estoque_caixas": 7,
-    "estoque_resmas": 68,
+    "estoque_caixas": 2,
+    "estoque_resmas": 18,
     "historico": [
         {
+            "id": 1,
             "tipo": "entrada",
             "quantidade": 1,
-            "data": "14/03/2026"
+            "data": "17/06/2026"
         },
         {
+            "id": 2,
             "tipo": "entrada",
             "quantidade": 1,
-            "data": "14/06/~2026"
+            "data": "17/06/~2026"
         },
         {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "12"
-        },
-        {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "12"
-        },
-        {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "1"
-        },
-        {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "1"
-        },
-        {
-            "tipo": "entrada",
-            "quantidade": 1,
-            "data": "1"
-        },
-        {
+            "id": 3,
             "tipo": "saida",
-            "data": "15/06/2026",
+            "data": "17/06/2026",
             "quantidade": 2,
             "setor": "saa",
-            "responsavel": "karita "
+            "responsavel": "karita"
         }
     ]
 }

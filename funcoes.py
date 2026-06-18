@@ -33,8 +33,12 @@ def registrar_entrada():
     dados.estoque_caixas += quantidade_entrada
     dados.estoque_resmas += quantidade_entrada * 10 
 
+    
+    id = gerar_id()
+
 
     dados.historico.append({
+        'id': id,
         'tipo': tipo,
         'quantidade': quantidade_entrada,
         'data': data
@@ -102,10 +106,13 @@ def registrar_saida():
 
     tipo = 'saida'
 
+    id = gerar_id()
+
     dados.estoque_resmas -= quantidade_saida
     dados.saida_por_caixa += quantidade_saida
 
     dados.historico.append({
+         'id': id,
         'tipo': tipo,
         'data': data,
         'quantidade': quantidade_saida,
@@ -249,6 +256,24 @@ def validar_data(data):
      except ValueError: 
           print('Houve um erro, tente novamente')
 
+# FUNÇÃO PARA GERAR E VALIDAR O ID DE CADA MOVIMENTAÇÃO 
+def gerar_id():
+     if len(dados.historico) == 0 :
+          id = 1 
+     
+     else:
+          novo_id = dados.historico[-1]['id']
+          novo_id += 1
+          id = novo_id
+
+     return id 
+              
+
+
+
+
+
+     
 
 
      
