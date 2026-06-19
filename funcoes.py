@@ -18,17 +18,16 @@ def registrar_entrada():
        
        except ValueError:
             print('Digite apenas numeros')
+               
+    while True:
+          data = input('Digite a data da entrada:').strip()
+
+          if validar_data(data):
+               break
 
 
-    if quantidade_entrada < 0:
-         print('Valor muito abaixo do esperado, tente novamente')
-         return 
-    
     tipo = 'entrada'
 
-    data = input('Digite a data da entrada:')
-
-    validar_data(data)
 
     dados.estoque_caixas += quantidade_entrada
     dados.estoque_resmas += quantidade_entrada * 10 
@@ -255,6 +254,7 @@ def validar_data(data):
           
      except ValueError: 
           print('Houve um erro, tente novamente')
+          return False
 
 # FUNÇÃO PARA GERAR E VALIDAR O ID DE CADA MOVIMENTAÇÃO 
 def gerar_id():
