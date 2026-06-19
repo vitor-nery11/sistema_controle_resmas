@@ -143,11 +143,17 @@ def consultar_estoque():
 # FUNÇÃO PARA MOSTRAR HISTORICO DE DADOS
 def mostrar_historico():
      os.system('cls')
+     if not dados.historico:
+          print('Nossos dados estão vazios, tente fazer movimentações')
+
      print('=== HISTORICO ===')
+
      for movimentacoes in dados.historico:
+
           
           if movimentacoes['tipo'] == 'entrada':
                print('ENTRADA:')
+               print(f'ID: {movimentacoes['id']}')
                print(f'Data: {movimentacoes['data']}')
                print(f'Quantidade: {movimentacoes['quantidade']}')
                print('--------------------')
@@ -157,12 +163,14 @@ def mostrar_historico():
           
           if movimentacoes['tipo'] == 'saida':
                print('SAIDA')
+               print(f'ID: {movimentacoes['id']}')
                print(f'Data: {movimentacoes['data']}')
                print(f'Quantidade: {movimentacoes['quantidade']}')
                print(f'Setor: {movimentacoes['setor']}')
                print(f'Responsavel: {movimentacoes['responsavel']}')
                print('---------------------')
                print()
+
 
 # FUNÇÃO PARA GERAR RELATORIO DE DADOS DO SISTEMA 
 def gerar_relatorio():
