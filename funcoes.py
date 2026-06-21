@@ -145,8 +145,7 @@ def mostrar_historico():
      os.system('cls')
      if not dados.historico:
           print('Nossos dados estão vazios, tente fazer movimentações')
-
-     print('=== HISTORICO ===')
+          
 
      for movimentacoes in dados.historico:
 
@@ -190,14 +189,28 @@ def gerar_relatorio():
              total_entrada += 1
         elif movimentacao['tipo'] == 'saida':
              total_saida += 1 
-             
+
+     # logica para a media de movimentações 
+     contador = 0 
+     contador_quantidade = 0
+     media = 0 
+     for movimentacao in dados.historico:
+          if movimentacao['tipo'] == 'saida':
+               contador += movimentacao['quantidade']
+               contador_quantidade += 1
+
+          if contador_quantidade > 0:
+             media = contador / contador_quantidade
+          else:
+               media = 0
+
         
      print(f'Total de entradas: {total_entrada}')
 
      print(f'Total de saidas:{total_saida}')
 
      print(f'Total de movimentações:{total_movimentações}')
-     print()
+     print(f'Consumo medio: {media} resmas')
 
 # LOGICA PARA VALIDAÇÃO DE ESTOQUE DE CAIXAS BASEADO NO GASTO DE RESMAS
 def atualizar_estoque():

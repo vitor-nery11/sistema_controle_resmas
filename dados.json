@@ -1,0 +1,28 @@
+{
+    "estoque_caixas": 1,
+    "estoque_resmas": 6,
+    "historico": [
+        {
+            "id": 1,
+            "tipo": "entrada",
+            "quantidade": 1,
+            "data": "20/06/2026"
+        },
+        {
+            "id": 2,
+            "tipo": "saida",
+            "data": "20/06/2026",
+            "quantidade": 2,
+            "setor": "saa",
+            "responsavel": "karita"
+        },
+        {
+            "id": 3,
+            "tipo": "saida",
+            "data": "20/06/2026",
+            "quantidade": 2,
+            "setor": "saa",
+            "responsavel": "karita"
+        }
+    ]
+}
