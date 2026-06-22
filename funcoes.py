@@ -43,6 +43,7 @@ def registrar_entrada():
         'data': data
     })
 
+
     salvar_dados()
     os.system('cls')
     print(f'{quantidade_entrada} caixas adicionadas com sucesso!!')
@@ -204,6 +205,25 @@ def gerar_relatorio():
           else:
                media = 0
 
+     # setor que mais consumiu resmas 
+     melhor_setor = ''
+     maior_consumo = 0 
+     for movimentacao in dados.historico:
+          if movimentacao['tipo'] == 'saida':
+              setor = movimentacao['setor']
+              quantidade = movimentacao['quantidade']
+              
+
+              if setor not in dados.consumo_setores:
+                 dados.consumo_setores[setor] = quantidade
+              else:
+                 dados.consumo_setores[setor] += quantidade
+
+     for setor, total  in dados.consumo_setores.items():
+          if total  < maior_consumo:
+               maior_consumo = total 
+               melhor_setor = setor
+
         
      print(f'Total de entradas: {total_entrada}')
 
@@ -211,6 +231,8 @@ def gerar_relatorio():
 
      print(f'Total de movimentações:{total_movimentações}')
      print(f'Consumo medio: {media} resmas')
+     print(f'O setor que mais consumiu foi {melhor_setor} com {maior_consumo}')
+     print()
 
 # LOGICA PARA VALIDAÇÃO DE ESTOQUE DE CAIXAS BASEADO NO GASTO DE RESMAS
 def atualizar_estoque():
