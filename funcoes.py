@@ -220,7 +220,7 @@ def gerar_relatorio():
                  dados.consumo_setores[setor] += quantidade
 
      for setor, total  in dados.consumo_setores.items():
-          if total  < maior_consumo:
+          if total > maior_consumo:
                maior_consumo = total 
                melhor_setor = setor
 
