@@ -81,8 +81,8 @@ def registrar_saida():
     while True: 
           data = input('Digite a data da saida de resma:').strip()
 
-          validar_data(data)
-          break
+          if validar_data(data):
+               break
 
 
     while True:
@@ -236,7 +236,7 @@ def gerar_relatorio():
 
 # LOGICA PARA VALIDAÇÃO DE ESTOQUE DE CAIXAS BASEADO NO GASTO DE RESMAS
 def atualizar_estoque():
-     if dados.saida_por_caixa == 10:
+     while dados.saida_por_caixa >= 10:
           dados.estoque_caixas -= 1
           dados.saida_por_caixa -= 10
 
